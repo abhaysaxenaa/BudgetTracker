@@ -1,0 +1,25 @@
+<section class="items-list">
+    <div class="item">
+        <div class="column">
+            <h1>Items:</h1>
+            <div class="budget-item-list">
+                <div *ngFor="let item of singularItem ">
+                    <app-item-card 
+                        *ngIf="item.amount >= 0"
+                        (clearItem)="clearItem(item)"
+                        [item]="item"
+                        style="display: block; margin-bottom: 20px">
+                    </app-item-card>
+                </div>
+                <div *ngFor="let item of singularItem ">
+                    <app-item-card 
+                        *ngIf="item.amount < 0"
+                        (clearItem)="clearItem(item)"
+                        [item]="item"
+                        style="display: block; margin-bottom: 20px">
+                    </app-item-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

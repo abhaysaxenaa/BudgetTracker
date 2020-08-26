@@ -1,0 +1,13 @@
+<section class="total-budget-bar">
+    <h2 [ngClass]="{'positive': calculateBudget > 0, 'negative': calculateBudget <= -1}">{{ calculateBudget }}</h2>
+</section>
+
+<section class="add-items">
+    <div class="add-item">
+        <app-bulma-form (formSubmit)="addItemToList($event)"></app-bulma-form>
+    </div>
+</section>
+
+<hr>
+
+<app-items [singularItem]="budgetItems" (clear)="deleteItemFromList($event)"></app-items>

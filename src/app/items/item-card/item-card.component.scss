@@ -1,0 +1,77 @@
+.card {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    &:hover{
+        .delete-button {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .delete-button {
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        top: -15px;
+        right: -15px;
+        border-radius: 50%;
+        background-image: url(../../../images/delete.svg);
+        background-color: lightgray;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: scale(0);
+
+        &:hover{
+            transform: scale(1.2);
+            cursor: pointer;
+            background-color: darken($color: lightgrey, $amount: 5%);
+        }
+    }
+
+}
+
+.item {
+    display: flex;
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    .description {
+        flex-grow: 1;
+        font-size: 24px;
+        margin-left: 5px;
+        font-weight: 500;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .amount {
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    &:hover{
+        background-color: darken($color: lightgrey, $amount: 5%);
+    }
+}
+
+.negative {
+    .description {
+        color: lighten(rgb(218, 49, 49), 5%);
+    }
+    .amount {
+        background-color: rgb(252, 99, 99);
+    }
+}
+
+.positive {
+    .description {
+        color: lighten(rgb(50, 218, 50), 5%);
+    }
+    .amount {
+        background-color: rgb(114, 245, 114);
+    }
+}

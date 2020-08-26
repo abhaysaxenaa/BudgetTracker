@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="item" [ngClass]="{'positive': item.amount>=0, 'negative' : item.amount<0}">
+        <div class="description">
+            <p>{{ item.description }}</p>
+        </div>
+        <div class="amount">
+            <p>{{ item.amount }}</p>
+        </div>
+    </div>
+
+    <div class="delete-button" (click)="clearForm()"></div>
+</div>
